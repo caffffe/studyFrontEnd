@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>h5test</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/js.js" ></script>
+		
+	</head>
+	<body>
+	
+		
+        <div  id="dragFunction" class="wrap">
+        	<table >
+        	 <tr>
+        	  <td  draggable="true"  ><img class="img1"  /></td>
+        	  <td  draggable="true" ><img class="img2"   /></td>
+        	  <td  draggable="true" ><img class="img3"  /></td>
+        	 </tr>
+        	 <tr>
+        	  <td  draggable="true" ><img class="img4" /></td>
+        	  <td  draggable="true" ><img class="img5"  /></td>
+        	  <td  draggable="true" ><img class="img6"  /></td>
+        	 </tr>
+        	 <tr>
+        	  <td  draggable="true" ><img calss="img7"  /></td>
+        	  <td  draggable="true" ><img class="img8"  /></td>
+        	  <td  draggable="true" ><img class="img9" /></td>
+        	 </tr>
+        	</table>
+        	
+        </div>
+        
+        	
+        </div>
+        
+        <script type="text/javascript">
+         
+			
+          //random三步骤：1、生成随机数2、去除重复数3、赋值
+		   var array = new Array();
+		   // getArray(9,8,0); //9是生成4个随机数,8和0是指随机生成数是从0到8的数
+		   function getArray(count,maxs,mins){ 
+		    while(array.length < count){
+		     var temp = getRandom(maxs,mins);
+		     if(!serch(array,temp)){
+		      array.push(temp);
+		     }
+		    }
+		   // alert("生成的数组为:"+array);
+		    //return array;		   
+		   }    
+		   function getRandom(maxs,mins){  //随机生成maxs到mins之间的数
+		    return Math.round(Math.random()*(maxs-mins))+mins;
+		   }
+		   function serch(array,num){   //array是否重复的数
+		    for(var i=0;i<array.length;i++){
+		     if(array[i] == num){
+		      return true;
+		     }      
+		    }
+		    return false;
+		  
+		   }
+            getArray(9,8,0)
+			for(i=0;i<9;i++)
+			{   //var m=Math.random();
+			    //document.getElementsByTagName('img')[i].setAttribute("src","img/"+parseInt(Math.random()*9)+".jpg");
+				document.getElementsByTagName('img')[i].setAttribute("src","img/"+ array[i] +".jpg");
+				//randomNumber();
+			}
+			
+			
+			var dragSrcEl = null;
+			var tds = document.querySelectorAll('td');
+	//DnD属性有七个常见的事件：
+	  /*
+	   * 1、dragstart:事件的主体是被拖放的元素，在这个实验中被拖放的元素是td，在元素开始被拖放时触发（时点事件，开始拖）
+	   * 2、drag：主体是被拖放的元素，td，元素拖放过程中触发（时期事件，拖ing）
+	   * 3、dragenter：事件主体是目标元素（你要拖放到哪个元素上），被拖放的元素进入目标元素时触发（进）
+	   * 4、dragover：事件主体是目标元素，被拖放元素完全在目标元素内时触发（在）
+	   * 5、dragleave：事件主体是目标元素，被拖放元素移出目标元素时触发（出）
+	   * 6、drop：事件主体是目标元素，目标元素完全接受被拖放元素时触发（完成）
+	   * 7、dragend：事件主体是被拖放元素，操作结束以后触发
+	   * 
+	   * //DnD事件的对象主要是DataTransfer
+	   * 主要是DataTransfer.setdata() and DataTransfer.getdata().作为在整个拖放过程中数据的设置和读取
+	   */
+			function handleDragStart(e) {
+			  this.style.opacity = '0.4';  
+			  dragSrcEl = this;
+			  e.dataTransfer.effectAllowed = 'move';
+			  e.dataTransfer.setData('text/url-list', this.innerHTML);			  
+			}			
+			function handleDragOver(e) 
+			{
+			  if (e.preventDefault) 
+			  {
+			    e.preventDefault(); 
+			  }			
+			  e.dataTransfer.dropEffect = 'move';  
+			   this.style.opacity='1';			
+			}			
+			function handleDragEnter(e) {         
+			  this.classList.add('over');			
+			}			
+			function handleDragLeave(e) {
+			  this.classList.remove('over');  			  
+			}						
+			function handleDrop(e) {			
+			  if (e.stopPropagation) {
+			    e.stopPropagation();
+			    //阻止冒泡
+			    console.log("stopPropagation");
+			  }
+			if (dragSrcEl != this) {
+		    dragSrcEl.innerHTML = this.innerHTML;
+		    this.innerHTML = e.dataTransfer.getData('text/url-list');
+		       }
+//			var count = this.querySelector('td');
+//          var newCount = parseInt(count.getAttribute('data-td-moves')) + 1;
+//          count.setAttribute('data-td-moves', newCount);
+//          count.textContent = 'moves: ' + newCount;
+			e.preventDefault();
+			 //这一行代码非常非常非常重要，阻止浏览器的自行为，如果没有这一句的话，浏览器会自己在原页面重新打开一个
+			 //页面，这个页面是你当前点击的图像，实际测试FF会有这个现象
+			  return false;
+			}
+			function handleDragEnd(e) {			 
+			  [].forEach.call(tds, function (tdfunc) {
+			    tdfunc.classList.remove('over');			   
+			  });
+			  
+			}
+			
+			[].forEach.call(tds, function(tdfunc) {
+			  tdfunc.addEventListener('dragstart', handleDragStart, false);
+			  tdfunc.addEventListener('dragenter', handleDragEnter, false)
+			  tdfunc.addEventListener('dragover', handleDragOver, false);
+			  tdfunc.addEventListener('dragleave', handleDragLeave, false);
+			  tdfunc.addEventListener('drop', handleDrop, false);
+			  tdfunc.addEventListener('dragend', handleDragEnd, false);
+			});
+			
+			</script> 
+	</body>
+</html>
