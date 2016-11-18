@@ -1,0 +1,55 @@
+.container{
+	display:flex;
+	
+	padding:10px;
+	border:1px solid #000;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:flex-start;
+	align-items:center;
+}
+.one{
+	width:150px;
+	height:120px;
+	margin:10px;
+	border:1px solid #f00;
+	flex:0 0 150px;
+}
+.two{
+	width:150px;
+	height:100px;
+	margin:10px;
+	border:1px solid #f00;
+	flex:0 0 150px;
+}
+.three{
+	width:150px;
+	height:20px;
+	margin:10px;
+	border:1px solid #f00;
+	flex:0 0 150px;
+}
+.four{
+	width:150px;
+	height:200px;
+	margin:10px;
+	border:1px solid #0f0;
+	flex:0 0 150px;
+}
+@media screen and (max-width:640px){
+	.container{
+		flex-wrap:wrap;
+	}
+    .four{
+    	order:0;
+    }
+    .one{
+    	order:1;
+    }
+    .two{
+    	order:2;
+    }
+    .three{
+    	order:3;
+    }
+}
