@@ -1,0 +1,164 @@
+*{
+	padding:0;
+	margin:0;
+	font-size:67.5%;
+}
+a{
+	text-decoration:none;
+	color:#000;
+}
+body{
+    background:rgb(233,235,234);
+}
+header{
+	position:relative;
+	width:100%;
+	height:4rem;
+	line-height:4rem;
+	color:#fff;
+	background:rgb(145,212,218);
+	text-align:center;
+}
+header > a{
+    position:absolute;
+    left:0.3rem;
+	font-size:1.6rem;
+	color:#fff;
+}
+header > h1{
+	display:inline;
+	font-size:1.6rem;
+
+}
+nav{
+	display:block;
+	height:4rem;
+	line-height:4rem;
+	background:#fff;
+
+}
+nav > a{
+	display:inline;
+	margin-left:2.6rem;
+	font-size:1.6rem;
+}
+.tagDiv{
+	background:#fff;
+}
+
+.tagDiv a{
+	display:inline-block;
+	width:4rem;
+	height:6rem;
+	margin-left:2rem;
+	background:#fff;
+	text-align:center;
+}
+.tagDiv a img{
+	width:4rem;
+	height:4rem;
+}
+hr{
+	width:28rem;
+    margin-left:2rem;
+	color:grey;
+}
+.subfieldDiv{
+	height:20rem;
+	background:#fff;
+}
+
+.subfieldDiv .subfield{
+	display:inline-block;
+	width:10rem;
+	height:15rem;
+	margin-top:3rem;
+	text-align:center;
+	border-right:1px solid grey;
+}
+.subfieldDiv .subfield:nth-child(3){
+	border-right:none;
+}
+.subfieldDiv .subfield img{
+	width:8rem;
+	height:12rem;
+}
+
+
+.moduleDiv{
+
+	background:#fff;
+    padding:2rem;
+    margin-top:2rem;
+    margin-bottom:2rem;
+}
+.moduleDiv .content{
+    display:block;
+}
+.moduleDiv .content h2{
+	font-size:2rem;
+	padding:1rem 0 1rem 0;
+	border-bottom:1px solid #ccc;
+}
+.moduleContent{
+	margin-top:1rem;
+}
+.moduleContent img{
+	display:inline-block;
+	width:8rem;
+	height:10rem;
+}
+.moduleText{
+	display:inline-block;
+	width:20rem;
+	height:10rem;
+
+}
+.moduleDiv .moduleContent span{
+	display:inline-block;
+	width:8rem;
+	height:3rem;
+	line-height:3rem;
+	margin-top:1.5rem;
+	margin-left:0.5rem;
+	text-align:center;
+	background:#ccc;
+}
+
+.infoDiv{
+	padding:2rem;
+    background:#fff;
+    margin-top:0.5rem;
+}
+.infoDiv img{
+	display:inline-block;
+	width:9rem;
+	height:6rem;
+}
+.infoText{
+	display:inline-block;
+	width:16rem;
+}
+.infoDiv h2{
+	width:16rem;
+	font-size:1.5rem;
+}
+.infoDiv p{
+	font-size:1rem;
+	color:#ccc;
+}
+.lastDiv{
+	padding:2rem;
+    background:#fff;
+    margin-top:0.5rem;
+	margin-bottom:4rem;
+}
+.lastDiv h2{
+	font-size:1.5rem;
+}
+.lastDiv img{
+	display:inline-block;
+	width:9rem;
+	height:6rem;
+	margin-top:1rem;
+}
