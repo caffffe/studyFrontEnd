@@ -1,0 +1,124 @@
+body{
+	font-family: "微软雅黑";
+}
+table{
+	text-align:left;
+	margin:0 auto;
+}
+tr th{
+	color:#fff;
+	background:#000;
+	border:1px solid #fff;
+}
+
+table tr:nth-child(2n){
+	background:#fff;
+    color:#000;
+    border:1px solid #fff;
+}
+table tr:nth-child(2n-1){
+	background:#ccc;
+    color:#000;
+    border:1px solid #fff;
+}
+table tr:nth-child(4),table tr:nth-child(2),table tr:nth-child(3){
+   color:red;
+}
+input[type="text"]{
+	display:block;
+	width:50px;
+	margin:20px auto;
+}
+.transInput{
+	transition:width 2s linear .2s;
+	-webkit-transition:width 2s linear .2s;
+	-o-transition:width 2s linear .2s;
+}
+.transInput:focus{
+   width:200px;
+   border:2px solid rgb(142,190,229);
+   outline:none;
+}
+
+.container{
+	position:relative;
+	width:400px;
+	height:300px;
+	margin:20px auto;
+	overflow:hidden;
+
+}
+img{
+	position:absolute;
+	left:0;
+	width:400px;
+	height:300px;
+	z-index:1;
+	 transition:all 1s linear .2s;
+}
+img[src='img/1.jpg']{
+	left:0px;
+}
+img[src='img/2.jpg']{
+	left:400px;
+}
+img[src='img/21.jpg']{
+	left:400px;
+}
+.container div{
+    position:absolute;
+    bottom:0;
+    width:30px;
+    line-height:30px;
+    background:#fff;
+    opacity:0.4;
+    text-align:center;
+    z-index:100;
+    cursor:pointer;
+}
+input[type="radio"]{
+	position:absolute;
+	width:30px;
+    height:30px;
+	opacity:0;
+	bottom:0;
+	z-index:1000;
+}
+.container div span{
+	font-weight:bold;
+	opacity:1;
+	color:#000;
+}
+
+
+.container div:nth-of-type(1),.container input:nth-of-type(1){
+	right:64px;
+}
+.container div:nth-of-type(2),.container input:nth-of-type(2){
+	right:32px;
+}
+.container div:nth-of-type(3),.container input:nth-of-type(3){
+	right:0px;
+}
+
+.container #control-1:checked ~ img{
+	left:400px;
+}
+.container #control-1:checked + img{
+	left:0px;	
+}
+.container #control-2:checked ~ img[src='img/1.jpg']{
+	left:-400px;
+}
+.container #control-2:checked ~ img[src='img/21.jpg']{
+	left:400px;
+}
+.container #control-2:checked + img{
+	left:0px;	
+}
+.container #control-3:checked ~ img{
+	left:-400px;
+}
+.container #control-3:checked + img{
+	left:0px;	
+}
