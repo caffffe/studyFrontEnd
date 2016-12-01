@@ -73,8 +73,6 @@ function renderAqiList() {
          table.appendChild(tr);
      }
      //注意性能，如果用innerHTML拼接会简单，性能也会好很多
-  
-    //aqiData.pop();
 
 }
 
@@ -109,7 +107,7 @@ function init() {
   btn.onclick=addBtnHandle;
   // 想办法给aqi-table中的所有删除按钮绑定事件，触发delBtnHandle函数
   // var btns=document.getElementsByTagName("button");
-  //这里特别注意一点，直接给btns循环加事件会出现问题，就是那个闭包的问题，所以应该在他们的祖先元素上加事件，再冒泡，同时也可以提高性能。
+  //这里特别注意一点，直接给btns循环加事件会出现问题，好像是情封大大说的，button是用js加入html文档的，所以不能直接给它加事件，这里验证了诶
   	if(table.addEventListener)
   	   table.addEventListener("click",delBtnHandle,false);
     else if(btn.attachEvent)
