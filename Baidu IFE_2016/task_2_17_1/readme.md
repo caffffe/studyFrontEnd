@@ -44,3 +44,4 @@
 总结：
 1、随机的颜色，本来想用一个数组然后用随机数选择下标，看别人的代码发现可以用  div.style.backgroundColor='#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);，哇！喜欢，学习了
 2、用innerHTML取代createElement appendChild
+3、之前css3动画没有变化，是因为原本没有div，创建div然后给他高度不会变化，所以要先创建好div，根据情况修改height,才会用transition动画

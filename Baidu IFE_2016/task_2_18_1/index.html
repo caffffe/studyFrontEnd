@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    input[type="text"]{
+	    	margin-left:10px;
+	    }
+		#container{
+			height:200px;
+			margin-top:10px;
+		}
+		
+		.box{
+			float:left;
+			margin-top:5px;
+			margin-left:10px;
+			width:20px;
+			height:20px;
+			padding:5px 10px;
+			background:red;
+			color:white;
+		}
+
+	</style>
+</head>
+<body>
+	<form>
+		<input type="text"/>
+		<input type='button' id="leftIn" value="左侧进"/>
+		<input type='button' id="rightIn" value="右侧进"/>
+		<input type='button' id="leftOut" value="左侧出"/>
+		<input type='button' id="rightOut" value="右侧出"/>
+	</form>
+
+	<div id="container">
+	</div>
+	<script type="text/javascript" src="move.js"></script>
+</body>
+</html>
+
