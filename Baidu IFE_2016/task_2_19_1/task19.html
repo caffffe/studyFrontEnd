@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    input[type="text"]{
+	    	margin-left:10px;
+	    }
+		#container{
+			height:300px;
+			margin-top:10px;
+		}
+		
+		.box{
+			display:inline-block;
+			margin-left:8px;
+            vertical-align:bottom;
+			width:20px;
+			background:rgb(204,0,2);
+			color:white;
+			text-align:center;
+			transition:.5s .2s;
+		}
+
+	</style>
+</head>
+<body>
+	<form>
+		<input type="text"/>
+		<input type="button" id="leftIn" value="左侧进"/>
+		<input type="button" id="rightIn" value="右侧进"/>
+		<input type="button" id="leftOut" value="左侧出"/>
+		<input type="button" id="rightOut" value="右侧出"/>
+		<input type="button" id="bubbleSort" value="冒泡排序"/>
+	</form>
+
+	<div id="container">
+	  <div class="box" style="height:297px;" onclick="removeOwn()"></div>
+	  <div class="box" style="height:33px;" onclick="removeOwn()"></div>
+	  <div class="box" style="height:264px;" onclick="removeOwn()"></div>
+	  <div class="box" style="height:297px;" onclick="removeOwn()"></div>
+	  <div class="box" style="height:33px;" onclick="removeOwn()"></div>
+	</div>
+	<script type="text/javascript" src="task19.js"></script>
+</body>
+</html>
+
