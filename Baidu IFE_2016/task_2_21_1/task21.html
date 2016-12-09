@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>task20</title>
+	<title>task21</title>
 	<style>
 	    input[type="text"]{
 	    	margin-left:10px;
@@ -11,30 +11,58 @@
 			height:200px;
 			margin-top:10px;
 		}
-		
+		#container:after{
+			content:'';
+			display:block;
+			clear:both;
+			visibility: hidden;
+		}
 		.box{
 			float:left;
 			margin-top:5px;
 			margin-left:10px;
+            padding:5px 3px;
 
-			height:20px;
-			padding:5px 10px;
 			background:rgb(135,200,255);
 			color:white;
 			text-align:center;
 			transition:.5s .2s;
+			font-size:25px;
 		}
-		.box span{
-			color:red;
+		.box:hover{
+			cursor:pointer;
 		}
 
+        input [type="button"]{
+        	display:block;
+        	background:#fff;
+        	border-radius:5px;
+        }
+        .intbox{
+			float:left;
+			margin-top:5px;
+			margin-left:10px;
+            padding:5px 3px;
+			background:rgb(255,201,132);
+			color:white;
+			text-align:center;
+			transition:.5s .2s;
+			font-size:25px;
+		}
+		.intbox:hover{
+			cursor:pointer;
+		}
 	</style>
 </head>
 <body>
-	<input type="text">
-	<input type="button" id="insertBtn" value="插入">
+	<label>Tag:<input type="text"></label>
 	<div class="container" id="container">
-		
+       <!-- <div class='box' onmouseenter='techTag.enter()' onmouseleave='techTag.leave()' onclick='techTag.delete()'>HTML5</div> -->
+	</div>
+	<textarea cols="30" rows="10"></textarea>
+	<input type="button" value="确认兴趣爱好" id="insertBtn"/>
+	<div class="container" id="hobbyContainer">
+        
 	</div>
 	<script type="text/javascript" src="task21.js"></script>
 </body>

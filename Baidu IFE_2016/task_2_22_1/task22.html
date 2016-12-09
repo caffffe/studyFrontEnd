@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task22</title>
+	<style>
+		.box{
+			display:flex;
+			width:40%;
+			height:60%;
+			border:1px solid #000;
+			align-items: center;
+			justify-content:center;
+			background:#fff;
+		}
+		#root{
+			width:400px;
+			height:100px;
+		}
+		#child_1{
+			width:190px;
+			height:80px;
+		}
+		#child_2{
+			width:85px;
+			height:60px;
+		}
+		#child_3{
+			width:32.5px;
+			height:40px;
+		}
+		input [type="button"]{
+			float:left;
+			margin-top:20px;
+			margin-left:20px;
+		}
+	</style>
+</head>
+<body>
+    <div class="box" id="root">
+     	<div class="box" id="child_1">
+     		<div class="box" id="child_2">
+     			<div class="box" id="child_3"></div>
+     			<div class="box" id="child_3"></div>
+     		</div>
+     		<div class="box" id="child_2">
+     			<div class="box" id="child_3"></div>
+     			<div class="box" id="child_3"></div>
+     		</div>
+     	</div>
+     <div class="box" id="child_1">
+     		<div class="box" id="child_2">
+     			<div class="box" id="child_3"></div>
+     			<div class="box" id="child_3"></div>
+     		</div>
+     		<div class="box" id="child_2">
+     			<div class="box" id="child_3"></div>
+     			<div class="box" id="child_3"></div>
+     		</div>
+     	</div>
+     </div>
+     <input type="button" value="前序"/>
+     <input type="button" value="中序"/>
+     <input type="button" value="后序"/>
+   <script type="text/javascript" src="task22.js"></script>
+</body>
+</html>

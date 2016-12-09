@@ -28,3 +28,20 @@ Tag不能有重复的，遇到重复输入的Tag，自动忽视。
 爱好不能重复，所以在下方呈现前，需要做一个去重
 每个爱好内容需要做trim处理
 最多允许10个兴趣爱好，多于10个时，按照录入的先后顺序，把最前面的删掉
+
+
+总结：
+1、js键盘事件监听
+  EventUtil.addHandler(inputTxt,"keydown",operateArr.insert);
+   if(event.keyCode===13||event.keyCode===32||event.keyCode===188){
+          var text=document.getElementsByTagName("input")[0].value;
+      // alert("aa");
+         operateArr.arrs.push(text);
+         var addhtml="<div class='box'>"+text+"</div>";
+         con.innerHTML=con.innerHTML+addhtml;
+         document.getElementsByTagName("input")[0].value=="";
+    }
+2、split多个分隔符
+      var inserts=text.split(/ |,|、|\n/);
+3、看到别人用构造函数写好厉害呀，两个tag都是那个构造函数的实例，改改改！！！函数复用！！！改改改！
+4、事件冒泡：将点击事件加在container上
